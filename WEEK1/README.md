@@ -11,4 +11,5 @@ cluster and the cluster bootstrap process.
 ---
 ## Exercises
 
-1. Create a script that installs Kubernetes on a VM (any VM will do). Use the example [here](https://github.com/kubeskills/cka-roadmap/blob/main/WEEK1/example-install-k8s.sh) where this script installs version 1.21.0 of kubeadm, kubelet, and kubectl and also preps the CNI for being installed.
+1. Create a script that installs Kubernetes on a VM (any VM will do). Use the example [here](https://github.com/kubeskills/cka-roadmap/blob/main/WEEK1/example-install-k8s.sh) as a template for your script, where the script will install version 1.24.0 of kubeadm, kubelet, and kubectl and also preps the flannel CNI for being installed. 
+2. Create an "init script" that will only run on the control plane server in order to bootstrap or initialize the cluster
