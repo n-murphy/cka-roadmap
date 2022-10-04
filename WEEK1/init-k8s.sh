@@ -20,10 +20,9 @@ fi
 
 # TODO probably want to check that kubeadm is installed first command -v kubeadm etc!
 msg "initializing the cluster"
-kubeadm init --apiserver-advertise-address $IP_ADDR --apiserver-cert-extra-sans controlplane --pod-network-cidr 10.244.0.0/16
+kubeadm init --apiserver-advertise-address $IP_ADDR --apiserver-cert-extra-sans controlplane --pod-network-cidr 10.244.0.0/16 --cri-socket unix:///var/run/cri-dockerd.sock
 
-# For testing on killercoda due to resource limitations and socket conflicts ie more than one to choose from you need to add:
-# --cri-socket unix:///var/run/cri-dockerd.sock (as docker.sock already exists)
+# For testing on killercoda due to resource limitations you need to add:
 # --ignore-preflight-errors=NumCPU (Only 1 CPU available so need to turn this off.)
 #kubeadm init --apiserver-advertise-address $IP_ADDR --apiserver-cert-extra-sans controlplane --pod-network-cidr 10.244.0.0/16 --cri-socket unix:///var/run/cri-dockerd.sock --ignore-preflight-errors=NumCPU
 

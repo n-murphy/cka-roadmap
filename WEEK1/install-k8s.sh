@@ -77,7 +77,7 @@ sudo apt install -qq -y docker-ce=${DOCKER_VERSION} docker-ce-cli=${DOCKER_VERSI
 
 # run hello-world to make sure that its working
 msg "verify that docker runs successfully"
-docker run --rm hello-world
+sudo docker run --rm hello-world
 
 # Install cri-dockerd (otherwise we can't use docker alone as our container runtime)
 msg "installing cri-dockerd"
