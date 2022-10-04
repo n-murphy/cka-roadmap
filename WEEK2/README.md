@@ -24,4 +24,5 @@ We'll discover RBAC and how users and service accounts are managed in Kubernetes
 
 ## Exercises
 
-1. 
+1. Create the YAML for a `role` named "pod-reader" that allows users to perform get, watch and list on pods.
+2. Create the YAML for a `roleBinding` named "admin-binding", in the namespace "acme", granting permissions for the "admin" ClusterRole to a user named "bob".
