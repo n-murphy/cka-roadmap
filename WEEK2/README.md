@@ -7,3 +7,21 @@
 
 
 We'll discover RBAC and how users and service accounts are managed in Kubernetes.
+
+---
+
+## Resources
+
+- [Understanding RBAC - video](https://youtu.be/jvhKOAyD8S8)
+- [Complete RBAC understanding - video](https://youtu.be/PSDVanXZ0a4)
+- [Creating users and roles](https://killercoda.com/chadmcrowell/scenario/kubernetes-create-user)
+- [Access the raw API with curl](https://killercoda.com/chadmcrowell/scenario/kubernetes-access-raw-api)
+- [Control service account permissions using RBAC](https://killercoda.com/killer-shell-cka/scenario/rbac-serviceaccount-permissions)
+- [Setting user permissions using RBAC](https://killercoda.com/killer-shell-cka/scenario/rbac-user-permissions)
+
+
+---
+
+## Exercises
+
+1. 
