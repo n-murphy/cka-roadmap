@@ -33,7 +33,7 @@ if (( $? == 0 )) ; then
   sudo chown $(id -u):$(id -g) $HOME/.kube/config
   # apply the pod network
   msg "applying the flannel configuration"
-  kubectl apply -f ${HOME}/flannel.yaml
+  kubectl apply -f /tmp/flannel.yaml
   # check the cluster
   kubectl cluster-info
   kubectl get all -A

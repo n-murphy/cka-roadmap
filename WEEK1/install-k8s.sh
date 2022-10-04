@@ -108,5 +108,5 @@ sudo apt-mark hold kubelet kubeadm kubectl
 # download yaml flannel 
 msg "downloading flannel yaml configuration"
 # sudo wget -O ${HOME}/flannel.yaml "https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml"
-sudo wget -O ${HOME}/flannel.yaml "https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml"
-ls -1 ${HOME}/flannel.yaml
+wget -O /tmp/flannel.yaml "https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml"
+ls -1 /tmp/flannel.yaml
