@@ -35,4 +35,7 @@ if (( $? == 0 )) ; then
   # apply the pod network
   msg "applying the flannel configuration"
   kubectl apply -f ${HOME}/flannel.yaml
+  # check the cluster
+  kubectl cluster-info
+  kubectl get all -A
 fi
