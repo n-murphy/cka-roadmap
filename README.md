@@ -26,12 +26,5 @@ Also during the exam, you may have one and ONLY one of the following tabs open a
 
 Not sure if you have the right equipment to take the exam at home? [Run a system check](https://www.examslocal.com/ScheduleExam/Home/CompatibilityCheck)
 
-## Contents
-
-- [Cluster Architecture, Installation & Configuration - 25%](core_concepts.md)
-- [Workloads & Scheduling - 15%](scheduling.md)
-- [Services & Networking - 20%](networking.md)
-- [Storage - 10%](storage.md)
-- [Troubleshooting - 30%](troubleshooting.md)
 
 [View the most current exam curriculum](https://github.com/cncf/curriculum)
