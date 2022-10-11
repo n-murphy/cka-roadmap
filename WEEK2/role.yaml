@@ -7,3 +7,7 @@ rules:
 - apiGroups: [""]
   resources: ["pods"]
   verbs: ["get", "watch", "list"]
+
+# imperative command 
+# k create role pod-reader --verb=get,list,watch --resource=pods
+# k get role pod-reader -o yaml  
