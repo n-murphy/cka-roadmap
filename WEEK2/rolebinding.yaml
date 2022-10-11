@@ -1,0 +1,17 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: admin-binding
+  namespace: acme
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: admin
+subjects:
+- apiGroup: rbac.authorization.k8s.io
+  kind: User
+  name: bob
+
+# imperative command 
+# k create rolebinding admin-binding --role admin --user bob -n acme
+# k get rolebinding admin-binding -n acme -o yaml > /tmp/rolebinding.yaml
