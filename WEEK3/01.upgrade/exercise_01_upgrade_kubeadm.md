@@ -13,7 +13,7 @@ node01         Ready    <none>          12d   v1.24.0
 #### Upgrade kubeadm (controlplane)
 
 
-Check the existing version
+**Check the existing version**
 
 ```bash
 root@controlplane:~# kubeadm version -o json
@@ -32,7 +32,7 @@ root@controlplane:~# kubeadm version -o json
 }
 ```
 
-Check available versions of `kubeadm`
+**Check available versions of `kubeadm`**
 
 ```bash
 root@controlplane:~# sudo apt update
@@ -44,7 +44,7 @@ root@controlplane:~# sudo apt-cache madison kubeadm | head -5
    kubeadm |  1.24.7-00 | https://apt.kubernetes.io kubernetes-xenial/main amd64 Packages
 ```
 
-Run an upgrade plan
+**Run an upgrade plan**
 
 ```bash
 root@controlplane:~# sudo kubeadm upgrade plan
@@ -95,7 +95,8 @@ _____________________________________________________________________
 ```
 
 
-Remove hold on kubeadm
+**Remove hold on kubeadm**
+
 ```bash
 root@controlplane:~# sudo apt-mark unhold kubeadm
 Canceled hold on kubeadm.
@@ -118,7 +119,7 @@ kubeadm set on hold.
 ```
 
 
-Check the `kubeadm` version 
+**Check the `kubeadm` version afterwards**
 
 ```bash
 root@controlplane:~# kubeadm version -o json
