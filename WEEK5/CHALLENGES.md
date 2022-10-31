@@ -211,3 +211,55 @@ Finally I installed the chart.
 ```bash
 helm install swagger-editor-app ./swagger-editor-chart
 ```
+
+
+##### Test helm chart on KillerCoda
+
+**Commands Output**
+
+```bash
+# Clone week05 branch of the cka-roadmap repo
+
+controlplane $ git clone -b week05 https://github.com/n-murphy/cka-roadmap.git 
+Cloning into 'cka-roadmap'...
+remote: Enumerating objects: 159, done.
+remote: Counting objects: 100% (159/159), done.
+remote: Compressing objects: 100% (112/112), done.
+remote: Total 159 (delta 66), reused 109 (delta 31), pack-reused 0
+Receiving objects: 100% (159/159), 43.73 KiB | 3.36 MiB/s, done.
+Resolving deltas: 100% (66/66), done.
+
+# Goto the WEEK5 directory
+controlplane $ cd cka-roadmap/WEEK5
+
+# Install the swagger-editor-chart
+controlplane $ helm install swagger-editor ./swagger-editor-chart/
+NAME: swagger-editor
+LAST DEPLOYED: Mon Oct 31 16:34:40 2022
+NAMESPACE: default
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+
+# Check its running
+controlplane $ helm ls
+NAME            NAMESPACE       REVISION        UPDATED                                 STATUS          CHART                           APP VERSION
+swagger-editor  default         1               2022-10-31 16:34:40.983729774 +0000 UTC deployed        swagger-editor-chart-4.5.1      4.5.1      
+
+
+controlplane $ k get all -n default 
+NAME                                        READY   STATUS    RESTARTS   AGE
+pod/swagger-editor-deploy-85b9b8db7-5q6l8   1/1     Running   0          17s
+
+NAME                         TYPE        CLUSTER-IP    EXTERNAL-IP   PORT(S)          AGE
+service/kubernetes           ClusterIP   10.96.0.1     <none>        443/TCP          13d
+service/swagger-editor-svc   NodePort    10.108.4.14   <none>        8080:30080/TCP   17s
+
+NAME                                    READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/swagger-editor-deploy   1/1     1            1           17s
+
+NAME                                              DESIRED   CURRENT   READY   AGE
+replicaset.apps/swagger-editor-deploy-85b9b8db7   1         1         1       17s
+```
+
+Finally goto the `Traffic Port Accessor` page and enter `30080` in Custom Ports and click `Access` and \o/ Huzzah!! Swagger Editor is up and running.
