@@ -166,16 +166,48 @@ REVISION        UPDATED                         STATUS          CHART           
 
 #### Create a helm chart from scratch and deploy it to Kubernetes
 
-**Commands**
+See [swagger-editor-chart](./swagger-editor-chart/)
+
+I first generated the chart template files via:
 
 ```bash
-
+helm create swagger-editor-chart
 ```
 
-
-**Commands Output**
-
+I then genereated the deployment and service template yaml using the following commands:
 
 ```bash
+# generate deployment template yaml
+k create deployment swagger-editor --image=swaggerapi/swagger-editor:v4.5.1 --replicas=1 --port=8080 --dry-run=client -o yaml
 
+# generate service template yaml
+k expose deployment swagger-editor --type=NodePort --name=swagger-editor-service --dry-run=client -o yaml
+```
+
+I then modified the generated template yaml to add the helm templating as well as the NodePort etc.
+
+[swagger-editor-deploy.yaml](swagger-editor-chart/templates/swagger-editor-deploy.yaml)
+[swagger-editor-svc.yaml](swagger-editor-chart/templates/swagger-editor-svc.yaml)
+
+
+Next I updated the `values.yaml` 
+
+```yaml
+replicaCount: 1
+
+image:
+  repository: swaggerapi/swagger-editor
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "v4.5.1"
+
+service:
+  type: NodePort
+  nodePort: 30080
+```
+
+Finally I installed the chart.
+
+```bash
+helm install swagger-editor-app ./swagger-editor-chart
 ```

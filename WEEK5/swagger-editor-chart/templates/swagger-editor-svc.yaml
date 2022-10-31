@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: swagger-editor
+  name: {{ .Release.Name }}-svc
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+    nodePort: {{ .Values.service.nodePort }}
+  selector:
+    app: swagger-editor
+  type: {{ .Values.service.type }}
+status:
+  loadBalancer: {}
