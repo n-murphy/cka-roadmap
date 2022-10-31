@@ -19,7 +19,7 @@ We'll focus on creating deployments both from scratch and by using Helm. We'll a
 
 ## CHALLENGES
 
-> Put all YAML files in WEEK4 Directory
+> Put all YAML files in WEEK5 Directory
 
 1. Install the nginx ingress controller nginx-stable via https://helm.nginx.com/stable
 2. Install Hashicorp Vault via helm chart `hashicorp/vault` at https://helm.releases.hashicorp.com
